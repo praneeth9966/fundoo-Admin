@@ -1,0 +1,21 @@
+.first{
+    color: blue
+}
+.second{
+    color: red
+}
+.third{
+    color: yellow
+}
+.fourth{
+    color: green
+}
+.fifth{
+    color: blue
+}
+.sixth{
+    color: red
+}
+.card{
+    background-image: linear-gradient(skyblue, white);
+}
