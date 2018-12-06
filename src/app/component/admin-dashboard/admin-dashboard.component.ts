@@ -19,6 +19,7 @@ export class AdminDashboardComponent implements OnInit {
         type: "GET",
 
         success: function (res) {
+          $("#hide").hide();
           console.log(res);
           var usersArray = [];
           for (var i = 0; i < res.data.data.length; i++) {
@@ -66,10 +67,9 @@ export class AdminDashboardComponent implements OnInit {
         url: 'http://34.213.106.173/api/user/UserStatics',
         headers: {
           'Authorization': token,
-
-
         },
         success: function (response) {
+          $("#hide").hide();
           console.log("successfull");
           console.log(response);
           var arr = response.data.details;
@@ -82,7 +82,7 @@ export class AdminDashboardComponent implements OnInit {
             html += "</div></div>";
           }
           $("#services").html(html);
-
+         
         },
         error: function (error) {/**if error exists then print the alert */
           console.log(error);
@@ -110,6 +110,11 @@ export class AdminDashboardComponent implements OnInit {
           }
         })
       });
+
+      $('#button1').on('click', function () {
+        $(location).attr('href','/admin-questionanswer')
+      });
+
     })
   }
 
