@@ -46,6 +46,11 @@ export class QuestionanswerComponent implements OnInit {
             scroller: true,
             scrollY: 300,
             scrollX: false,
+            
+            columns:[
+            {"width":"10%"},
+            {"width":"70%"},
+            {"width":"20%"}],
 
             "columnDefs": [ {
               "targets": -1,

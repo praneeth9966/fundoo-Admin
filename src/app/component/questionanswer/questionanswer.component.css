@@ -119,3 +119,14 @@
             transform: scale(1);
   }
 }
+table{
+  table-layout: fixed;
+}
+table td {
+  
+  white-space: -o-pre-wrap; 
+  word-wrap: break-word;
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap; 
+  white-space: -pre-wrap;
+}

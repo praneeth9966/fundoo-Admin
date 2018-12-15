@@ -7,12 +7,14 @@ import { AdminLoginComponent } from './component/admin-login/admin-login.compone
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import {QuestionanswerComponent} from './component/questionanswer/questionanswer.component'
 import { from } from 'rxjs';
+import { PaymentcartComponent } from './component/paymentcart/paymentcart.component';
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
-    QuestionanswerComponent],
+    QuestionanswerComponent,
+    PaymentcartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
