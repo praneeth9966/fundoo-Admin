@@ -6,18 +6,15 @@ import * as $ from 'jquery';
   templateUrl: './paymentcart.component.html',
   styleUrls: ['./paymentcart.component.css']
 })
-export class PaymentcartComponent implements OnInit {
 
+export class PaymentcartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
     var id = localStorage.getItem("token");
     var rowIndex;
-    // $("#loader").show();
     $("#cartList").hide();
     $(document).ready(function () {
-
-
       $("#dashboard").click(function () {
         $(location).attr('href', 'dashboard');
       });
@@ -28,23 +25,20 @@ export class PaymentcartComponent implements OnInit {
         headers: {
           "Authorization": id
         },
-        //data['data'][i].id
         success: function (data) {
           var cartList = [];
           for (let i = 0; i < data['data'].length; i++) {
             cartList.push([i + 1, data['data'][i].product.name, data['data'][i].price])
             console.log(cartList)
           }
-          // $("#loader").hide();
-          $("#cartList").show();
 
+          $("#cartList").show();
           var table = $('#cartList').DataTable({
             "data": cartList,
             "columnDefs": [{
               "targets": 4,
               "render": function (data, type, row, meta) {
                 return '<button type="button" class="btn  btn-success" id="place" >Confirm order</button>'
-                // '<button type="button" class="btn  btn-danger" id="reject" style="margin-left:10px;">Reject order</button>';
               }
             }]
           });
@@ -75,12 +69,10 @@ export class PaymentcartComponent implements OnInit {
 
     });
 
-
-
   }
 
   back() {
-    $(location).attr('href', '/dashboardAdmin')
+    $(location).attr('href', '/admin-dashboard')
   }
 
 }
